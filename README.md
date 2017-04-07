@@ -4,7 +4,7 @@ THe code implement for a interesting quiz about exchanging the lids and empty bo
 
 这是一个很有趣的啤酒题，瓶盖和空瓶换啤酒。 用Javascript代码实现。
 
-题目：
+==========题目===========
   
   啤酒 ： 2元一瓶
   
