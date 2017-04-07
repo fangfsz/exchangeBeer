@@ -1,0 +1,35 @@
+You can buy 5 bottles of beer one time.
+and get Lids 5 pcs, emptyBottles 5 pcs.
+=============Loop begin================
+Exchange the lids of bottles firstly
+After this time: lids: 2,emptyBottles: 6, drinkTotal: 6
+
+Exchange the empty bottles then
+After this time: lids: 3,emptyBottles: 5, drinkTotal: 7
+After this time: lids: 4,emptyBottles: 4, drinkTotal: 8
+After this time: lids: 5,emptyBottles: 3, drinkTotal: 9
+After this time: lids: 6,emptyBottles: 2, drinkTotal: 10
+After this time: lids: 7,emptyBottles: 1, drinkTotal: 11
+
+---Revert the order to ensure the full loop---
+
+Exchange the empty bottles firstly
+Exchange the the lids of bottles then
+After this time: lids: 4,emptyBottles: 2, drinkTotal: 12
+After this time: lids: 1,emptyBottles: 3, drinkTotal: 13
+
+=============Loop End================
+
+=============Loop begin================
+Exchange the lids of bottles firstly
+Exchange the empty bottles then
+After this time: lids: 2,emptyBottles: 2, drinkTotal: 14
+After this time: lids: 3,emptyBottles: 1, drinkTotal: 15
+
+---Revert the order to ensure the full loop---
+
+Exchange the empty bottles firstly
+Exchange the the lids of bottles then
+
+=============Loop End================
+Total bottles to drink :15
