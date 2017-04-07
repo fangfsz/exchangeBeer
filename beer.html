@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drink</title>
+</head>
+<body>
+<script type="text/javascript" charset="UTF-8">
+    function B(p,m) {
+        this.total=parseInt(m/p);
+        this.Gai=this.total;
+        this.Kong=this.total;
+        this.GRule= function () {
+                this.Gai-=4;
+                this.total+=1 ;
+                this.Gai +=1;
+                this.Kong +=1;
+        };
+        this.KRule=function () {
+                this.Kong-=2;
+                this.total+=1 ;
+                this.Gai +=1;
+                this.Kong +=1;
+        };
+        this.exchange=function () {
+            console.log("=============Loop begin================");
+            //先把盖子换完
+            console.log("Exchange the lids of bottles firstly");
+            while(parseInt(this.Gai/4) !==0){
+                 this.GRule();
+                 console.log("After this time: lids: "+this.Gai+",emptyBottles: "+this.Kong+", drinkTotal: "+this.total);
+            }
+            //再换空瓶子
+            console.log("Exchange the empty bottles then");
+            while(parseInt(this.Kong/2) !==0){
+                this.KRule();
+                console.log("After this time: lids: "+this.Gai+",emptyBottles: "+this.Kong+", drinkTotal: "+this.total);
+            }
+            console.log("---Revert the order to ensure the full loop---");
+            //先把空瓶子换完
+            console.log("Exchange the empty bottles firstly");
+            while(parseInt(this.Kong/2) !==0){
+                this.KRule();
+                console.log("After this time: lids: "+this.Gai+",emptyBottles: "+this.Kong+", drinkTotal: "+this.total);
+            }
+            //再换空瓶子
+            console.log("Exchange the the lids of bottles then");
+            while(parseInt(this.Gai/4) !==0){
+                this.GRule();
+                console.log("After this time: lids: "+this.Gai+",emptyBottles: "+this.Kong+", drinkTotal: "+this.total);
+            }
+            console.log("=============Loop End================");
+        };
+        this.init=function () {
+            console.log("You can buy "+this.total+" bottles of beer one time.");
+            console.log("and get Lids "+ this.Gai+" pcs, emptyBottles "+ this.Kong+" pcs.");
+           while(this.Kong>=2 || this.Gai>=4){
+             this.exchange();
+           }
+           console.log("Total bottles to drink :"+ this.total);
+       };
+        this.init();
+    }
+    console.log(new B(2,10));
+</script>
+</body>
+</html>
